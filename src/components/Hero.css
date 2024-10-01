@@ -1,0 +1,26 @@
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero {
+    /*background-image: url('../../public/PatternMVG.png');*/
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-logo {
+    max-width: 80%;
+    max-height: 80%;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-logo {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  }
+  

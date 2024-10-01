@@ -1,0 +1,50 @@
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .portfolio {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+  }
+  
+  .portfolio-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .portfolio-item iframe {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .portfolio-item iframe {
+      height: 150px;
+    }
+  }
+  

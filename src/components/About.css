@@ -1,0 +1,35 @@
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .about {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+  }
+  
+  .about-logo {
+    width: 30%;
+    padding: 20px;
+  }
+  
+  .about-text {
+    width: 70%;
+    padding: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .about {
+      flex-direction: column;
+    }
+  
+    .about-logo, .about-text {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  

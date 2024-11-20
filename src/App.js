@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route/*, Link*/, Routes } from "react-router-dom";
+import { BrowserRouter as Router} from "react-router-dom";
 import "./App.css";
 
 import Header from './components/Header';
@@ -18,26 +18,24 @@ const App = () => {
 
 const Main = () => (
   <main>
-    <Routes>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/portfolio" component={Portfolio} />
-      <Route path="/contact" component={Contact} />
-    </Routes>
+     <Home />
+     <Pattern />
+     <About />
+     <Portfolio />
   </main>
 );
 
 const Home = () => (
-  <div className="home">
-    <h1>Everything you can imagine</h1>
-    <Pattern />
+  <div id="home" className="home">
+    <h1>Everything you <br/> can imagine</h1>
   </div>
 );
 
 const About = () => (
   <section id="about" className="about">
     <h2>About Us</h2>
-    <p>MVG is an Argentine company dedicated to video game development...</p>
+    <p>MVG is an argentine company dedicated to video game development, created in 2024, which aims 
+      to design and develop its own and third-party games.</p>
   </section>
 );
 
@@ -53,18 +51,10 @@ const Portfolio = () => (
   </section>
 );
 
-const Contact = () => (
-  <section id="contact" className="contact">
-    <h2>Contact Us</h2>
-    {/* Add your contact form or information here */}
-  </section>
-);
-
 const GameItem = () => (
   <div className="game-item">
     <div className="game-thumbnail">
-      {/* Replace with an actual YouTube embed */}
-      <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <iframe width="100%" height="250ox" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
     </div>
     <button className="download-button">Download</button>
   </div>
@@ -82,7 +72,7 @@ const Footer = () => (
 
 const Pattern = () => (
   <div className="pattern">
-    {/* Add your pattern design here */}
+    <img src="PatternMVG.png" alt="MVG Pattern"></img>
   </div>
 );
 

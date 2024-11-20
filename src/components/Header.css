@@ -4,12 +4,12 @@
   justify-content: space-between;
   align-items: center;
   background-color: #d96666;
-  padding: 1rem 1rem;
+  padding: .5rem 1rem;
   position: relative;
 }
 
 .logo img {
-  height: 40px; /* Adjust as needed */
+  height: 3em;
 }
 
 .nav ul {
@@ -43,10 +43,10 @@
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: 76px;
+  top: 60px;
   right: -100%;
   width: 200px;
-  height: 25%;
+  height: 30vh;
   background-color: #d96666;
   transition: right 0.3s ease-in-out;
   z-index: 10;
@@ -54,7 +54,7 @@
 
 .nav.open {
   right: 0;
-  top: 76px;
+  top: 60px;
 }
 
 .nav ul {

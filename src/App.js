@@ -62,11 +62,12 @@ const GameItem = () => (
 
 const Footer = () => (
   <footer className="footer">
-    <p>© 2024 MVG. All rights reserved.</p>
     <div className="social-icons">
-      <a href="https://www.fiverr.com">Fiverr</a>
-      <a href="https://www.linkedin.com">LinkedIn</a>
+      <a href="https://www.fiverr.com" target="_blank" rel="noreferrer"><img src="WpLogo.png" alt="WhatsApp Logo"/></a>
+      <a href="https://www.fiverr.com" target="_blank" rel="noreferrer"><img src="FiverrLogo.png" alt="Fiverr Logo"/></a>
+      <a href="https://www.fiverr.com" target="_blank" rel="noreferrer"><img src="LinkedinLogo.png" alt="Linkedin Logo"/></a>
     </div>
+    <p>© 2024 MVG. All rights reserved.</p>
   </footer>
 );
 

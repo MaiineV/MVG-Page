@@ -53,9 +53,8 @@ const Portfolio = () => (
 
 const GameItem = () => (
   <div className="game-item">
-    <div className="game-thumbnail">
-      <iframe width="100%" height="250ox" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-    </div>
+    <div className="game-thumbnail" />
+    <h3 className="game-title">Game name</h3>
     <button className="download-button">Download</button>
   </div>
 );
@@ -64,8 +63,8 @@ const Footer = () => (
   <footer className="footer">
     <div className="social-icons">
       <a href="https://www.fiverr.com" target="_blank" rel="noreferrer"><img src="WpLogo.png" alt="WhatsApp Logo"/></a>
-      <a href="https://www.fiverr.com" target="_blank" rel="noreferrer"><img src="FiverrLogo.png" alt="Fiverr Logo"/></a>
-      <a href="https://www.fiverr.com" target="_blank" rel="noreferrer"><img src="LinkedinLogo.png" alt="Linkedin Logo"/></a>
+      <a href="https://www.fiverr.com/s/XLdA9WZ" target="_blank" rel="noreferrer"><img src="FiverrLogo.png" alt="Fiverr Logo"/></a>
+      <a href="http://linkedin.com/company/maine-v-games" target="_blank" rel="noreferrer"><img src="LinkedinLogo.png" alt="Linkedin Logo"/></a>
     </div>
     <p>© 2024 MVG. All rights reserved.</p>
   </footer>

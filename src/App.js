@@ -43,19 +43,19 @@ const Portfolio = () => (
   <section id="portfolio" className="portfolio">
     <h2>Portfolio</h2>
     <div className="game-grid">
-      <GameItem />
-      <GameItem />
-      <GameItem />
-      <GameItem />
+      <GameItem gameName="Sawi, The Void Buster" pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"/>
+      <GameItem gameName="Bullet Time"/>
+      <GameItem gameName="Factorio RL"/>
+      <GameItem gameName="Age RL"/>
     </div>
   </section>
 );
 
-const GameItem = () => (
+const GameItem = ({gameName, pptLink}) => (
   <div className="game-item">
     <div className="game-thumbnail" />
-    <h3 className="game-title">Game name</h3>
-    <button className="download-button">Download</button>
+    <h3 className="game-title">{gameName}</h3>
+    <button className="download-button" onClick={()=> {window.open(pptLink, "_blank")}}>Pitch Deck!</button>
   </div>
 );
 

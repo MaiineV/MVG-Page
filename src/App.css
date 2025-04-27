@@ -60,8 +60,8 @@ header nav ul li a {
   align-items: center;
   flex-direction: column;
   background-color: #EDBAA6;
-  padding: 1% 0 5% 0;
   gap: 2rem;
+  min-height: 95vh;
 }
 
 .about{
@@ -72,13 +72,23 @@ header nav ul li a {
   align-items: center;
 }
 
-.about h2, .portfolio h2{
+.about h2{
   font-family: "Lemonada", cursive;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   font-size: 2.5vw;
   color: #D48032;
+}
+
+.portfolio h2{
+  font-family: "Lemonada", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 4vw;
+  color: #D48032;
+  margin-block: 0.60em;
 }
 
 .about p{
@@ -93,48 +103,71 @@ header nav ul li a {
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Columnas dinámicas */
   gap: 2rem;
   width: 80%;
   margin: 0 auto;
-  justify-content: center;
+  justify-items: center; /* Centra los elementos horizontalmente */
+  align-items: start; /* Alinea los elementos al inicio (arriba) */
+  padding-bottom: 1rem;
 }
 
-
 .game-item {
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 250px;
-  margin: 10px auto;
+  display: block;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.game-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
 }
 
 .game-thumbnail {
-  background-color: #333;
-  height: 150px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.game-item:hover .thumbnail-image {
+  transform: scale(1.1);
 }
 
 .game-title {
-  margin: 10px 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #000;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 10px 0 20px 0;
 }
 
 .download-button {
-  background-color: #d5863b;
+  display: block;
+  margin: 10px auto 20px auto;
+  padding: 10px 20px;
+  background-color: #bd7231;
   color: white;
-  padding: 8px 16px;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .download-button:hover {
-  background-color: #bd7231;
+  background-color: #c07432;
 }
 
 .footer {
@@ -158,6 +191,7 @@ header nav ul li a {
   position: relative;
     width: 100%;
     height: 40vh;
+    padding: 1rem;
 }
 
 .pattern img{

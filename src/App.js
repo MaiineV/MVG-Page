@@ -18,10 +18,10 @@ const App = () => {
 
 const Main = () => (
   <main>
-     <Home />
+     <Portfolio />
      <Pattern />
      <About />
-     <Portfolio />
+     <Home />
   </main>
 );
 
@@ -43,26 +43,59 @@ const Portfolio = () => (
   <section id="portfolio" className="portfolio">
     <h2>Portfolio</h2>
     <div className="game-grid">
-      <GameItem gameName="Sawi, The Void Buster" pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"/>
-      <GameItem gameName="Bullet Time"/>
-      <GameItem gameName="Factorio RL"/>
-      <GameItem gameName="Age RL"/>
+    <GameItem 
+      gameName="Sawi, The Void Buster" 
+      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
+      imageRoute={"SawiBanner.png"}/>
+      <GameItem 
+      gameName="Sawi, The Void Buster" 
+      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
+      imageRoute={"SawiBanner.png"}/>
+      <GameItem 
+      gameName="Sawi, The Void Buster" 
+      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
+      imageRoute={"SawiBanner.png"}/>
+      <GameItem 
+      gameName="Sawi, The Void Buster" 
+      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
+      imageRoute={"SawiBanner.png"}/>
+      <GameItem 
+      gameName="Sawi, The Void Buster" 
+      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
+      imageRoute={"SawiBanner.png"}/>
+        <GameItem 
+      gameName="Sawi, The Void Buster" 
+      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
+      imageRoute={"SawiBanner.png"}/>
+        <GameItem 
+      gameName="Sawi, The Void Buster" 
+      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
+      imageRoute={"SawiBanner.png"}/>
+        <GameItem 
+      gameName="Sawi, The Void Buster" 
+      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
+      imageRoute={"SawiBanner.png"}/>
+      <GameItem 
+      gameName="Sawi, The Void Buster" 
+      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
+      imageRoute={"SawiBanner.png"}/>
     </div>
   </section>
 );
 
-const GameItem = ({gameName, pptLink}) => (
-  <div className="game-item">
-    <div className="game-thumbnail" />
+const GameItem = ({ gameName, pptLink, imageRoute }) => (
+  <a href={pptLink} target="_blank" rel="noopener noreferrer" className="game-item">
+    <div className="game-thumbnail">
+      <img src={imageRoute} alt={gameName} className="thumbnail-image" />
+    </div>
     <h3 className="game-title">{gameName}</h3>
-    <button className="download-button" onClick={()=> {window.open(pptLink, "_blank")}}>Pitch Deck!</button>
-  </div>
+  </a>
 );
 
 const Footer = () => (
   <footer className="footer">
     <div className="social-icons">
-      <a href="https://www.fiverr.com" target="_blank" rel="noreferrer"><img src="WpLogo.png" alt="WhatsApp Logo"/></a>
+      <a href="mailto:mainevgames@gmail.com" target="_blank" rel="noreferrer"><img src="mailvector.png" alt="Mail Logo"/></a>
       <a href="https://www.fiverr.com/s/XLdA9WZ" target="_blank" rel="noreferrer"><img src="FiverrLogo.png" alt="Fiverr Logo"/></a>
       <a href="http://linkedin.com/company/maine-v-games" target="_blank" rel="noreferrer"><img src="LinkedinLogo.png" alt="Linkedin Logo"/></a>
     </div>

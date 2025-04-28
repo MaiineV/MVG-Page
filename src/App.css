@@ -102,13 +102,15 @@ header nav ul li a {
 }
 
 .game-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Columnas dinámicas */
   gap: 2rem;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   justify-items: center; /* Centra los elementos horizontalmente */
-  align-items: start; /* Alinea los elementos al inicio (arriba) */
+  align-items: center; /* Alinea los elementos al inicio (arriba) */
+  justify-content: center;
   padding-bottom: 1rem;
 }
 

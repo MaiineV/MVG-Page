@@ -193,7 +193,7 @@ header nav ul li a {
   position: relative;
     width: 100%;
     height: 40vh;
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 
 .pattern img{

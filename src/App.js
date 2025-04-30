@@ -47,7 +47,7 @@ const Portfolio = () => (
       gameName="Sawi, The Void Buster" 
       pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
       imageRoute={"SawiBanner.png"}/>
-      <GameItem 
+      {/* <GameItem 
       gameName="Sawi, The Void Buster" 
       pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
       imageRoute={"SawiBanner.png"}/>
@@ -78,7 +78,7 @@ const Portfolio = () => (
       <GameItem 
       gameName="Sawi, The Void Buster" 
       pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
-      imageRoute={"SawiBanner.png"}/>
+      imageRoute={"SawiBanner.png"}/> */}
     </div>
   </section>
 );

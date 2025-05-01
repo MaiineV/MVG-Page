@@ -1,15 +1,24 @@
 /* Basic styles for both mobile and desktop */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Asegura que quede por encima del contenido */
+  background-color: #d96666; /* Asegurate de tener un fondo sólido para que no se vea el contenido detrás */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background-color: #d96666;
-  padding: .5rem 1rem;
-  position: relative;
+  height: 80px;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Opcional: sombrita para destacar el header */
 }
 
-.logo img {
-  height: 3em;
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 60px; /* o el tamaño que desees */
+  cursor: pointer;
 }
 
 .nav ul {

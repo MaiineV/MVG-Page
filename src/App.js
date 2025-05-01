@@ -1,15 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 import Header from './components/Header';
+import GameDetails from './components/GameDetails'; // Crearás esto
 
 const App = () => {
   return (
     <Router>
       <div className="App">
         <Header />
-        <Main />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/game/:id" element={<GameDetails />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
@@ -44,8 +49,8 @@ const Portfolio = () => (
     <h2>Portfolio</h2>
     <div className="game-grid">
     <GameItem 
+      id="sawi"
       gameName="Sawi, The Void Buster" 
-      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
       imageRoute={"SawiBanner.png"}/>
       {/* <GameItem 
       gameName="Sawi, The Void Buster" 
@@ -83,13 +88,13 @@ const Portfolio = () => (
   </section>
 );
 
-const GameItem = ({ gameName, pptLink, imageRoute }) => (
-  <a href={pptLink} target="_blank" rel="noopener noreferrer" className="game-item">
+const GameItem = ({ gameName, imageRoute, id }) => (
+  <Link to={`/game/${id}`} className="game-item">
     <div className="game-thumbnail">
       <img src={imageRoute} alt={gameName} className="thumbnail-image" />
     </div>
     <h3 className="game-title">{gameName}</h3>
-  </a>
+  </Link>
 );
 
 const Footer = () => (

@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Link } from "react-router-dom";
+import ScrollToTop from './ScrollToTop';
 
 import Header from './components/Header';
 import GameDetails from './components/GameDetails'; // Crearás esto
@@ -9,6 +10,7 @@ import GameDetails from './components/GameDetails'; // Crearás esto
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Header />
         <Routes>
@@ -52,6 +54,18 @@ const Portfolio = () => (
       id="sawi"
       gameName="Sawi, The Void Buster" 
       imageRoute={"SawiBanner.png"}/>
+    <GameItem 
+      id="darkEconomy"
+      gameName="Dark Economy" 
+      imageRoute={"DarkEconomyBanner.png"}/>
+    <GameItem 
+      id="factoryQuota"
+      gameName="Factory Quota" 
+      imageRoute={"FactoryQuota.png"}/>
+      <GameItem 
+      id="timeTravelerCivilization"
+      gameName="Time Travel Civilization" 
+      imageRoute={"TimeTravelerCivilization.png"}/>
       {/* <GameItem 
       gameName="Sawi, The Void Buster" 
       pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"

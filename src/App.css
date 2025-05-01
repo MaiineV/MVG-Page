@@ -147,10 +147,11 @@ header nav ul li a {
 
 .thumbnail-image {
   width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
+  height: 200px; /* Podés ajustar según lo que más te guste */
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
+
 
 .game-item:hover .thumbnail-image {
   transform: scale(1.1);
@@ -291,5 +292,9 @@ header nav ul li a {
 
   .home h1{
     font-size: 4vh;
+  }
+
+  .thumbnail-image {
+    height: 150px; /* Más bajo en móviles */
   }
 }

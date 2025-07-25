@@ -1,81 +1,101 @@
-Project Overview
-Description
-MVG‑Page is a single‑page application built with React that serves as the official portfolio website for MVG Games 
-It features sections such as About, Portfolio, and Contact, allowing visitors to learn about the company, explore projects, and get in touch
+# MVG-Page
 
-Live Demo
-A live demo of the site is hosted on Netlify and can be accessed at https://<YOUR_SITE>.netlify.app
+MVG-Page is a React-based single-page application serving as the official portfolio website for MVG Games, showcasing company information, project highlights, and contact options. The project is bootstrapped with Create React App for a zero-configuration setup, enabling quick local development and standardized build processes. It is hosted on Netlify, leveraging continuous deployment, automatic builds, and a global CDN for fast, reliable delivery.
 
-Features
-Responsive design optimized for both desktop and mobile devices.
+## Table of Contents
 
-Smooth single‑page navigation implemented with React Router or anchor links.
+1. [Features](#features)
+2. [Technology Stack](#technology-stack)
+3. [Installation](#installation)
+4. [Available Scripts](#available-scripts)
+5. [Deployment](#deployment)
+6. [Project Structure](#project-structure)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Contact](#contact)
 
-Portfolio section showcasing game projects with images, descriptions, and external links.
+## Features
 
-Embedded media support for game demo videos via YouTube integration.
+- **Responsive design**: Optimized for both desktop and mobile devices
+- **Smooth single-page navigation**: Implemented with anchor links or React Router for seamless section transitions
+- **Portfolio section**: Showcases game projects with images, descriptions, and external links to demos and repositories
+- **Embedded media support**: Includes YouTube demo videos to highlight gameplay and trailers
+- **Contact form**: Simple form or direct email link for easy inquiries from visitors
 
-Contact form or email link for direct inquiries.
+## Technology Stack
 
-Technology Stack
-Bootstrapped with Create React App for a modern build setup with no configuration needed.
+- **React (v18+)**: For building UI components and managing application state
+- **JavaScript (ES6+) & JSX**: For component logic and templating
+- **Create React App**: For a modern build setup with no initial configuration required
+- **Netlify**: For hosting, continuous integration, and global CDN delivery
 
-React (version 18+) for building UI components and managing application state.
+## Installation
 
-JavaScript (ES6+) and JSX for logic and templating.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MaiineV/MVG-Page.git
+   ```
+2. Install dependencies:
+   ```bash
+   cd MVG-Page
+   npm install
+   # or
+   yarn install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-CSS (and optional SCSS or CSS Modules) for styling.
-
-Netlify for hosting, continuous integration, and global CDN delivery.
-
-Installation
-Prerequisites
-Node.js (version 14 or higher) and npm (version 5.2 or higher) are required to run the project locally.
-
-Alternatively, Yarn can be used in place of npm if preferred.
-
-Getting Started:
-git clone https://github.com/MaiineV/MVG-Page.git    # Clone the repository :contentReference[oaicite:18]{index=18}
-cd MVG-Page                                          # Navigate into the project directory :contentReference[oaicite:19]{index=19}
-npm install                                          # Install dependencies (or use `yarn`) :contentReference[oaicite:20]{index=20}
+## Available Scripts
 
 In the project directory, you can run:
 
-npm start
-Runs the app in development mode at http://localhost:3000.
+- `npm start`: Runs the app in development mode at [http://localhost:3000](http://localhost:3000)
+- `npm run build`: Builds the app for production into the `build/` folder
+- `npm test`: Launches the test runner in interactive watch mode
+- `npm run eject`: Ejects the Create React App configuration, giving full control over build tools (irreversible)
 
-npm test
-Launches the test runner in interactive watch mode.
+## Deployment
 
-npm run build
-Builds the app for production into the build directory.
+1. Connect the GitHub repository to Netlify via the “New site from Git” workflow.
+2. Set the build command to `npm run build` and the publish directory to `build/` in Netlify settings.
+3. Netlify will automatically build and deploy the site on each push to the `main` branch.
 
-npm run eject
-Ejects the Create React App configuration (irreversible), giving full control over build tools.
+## Project Structure
 
-Deployment
-Hosting on Netlify
-Push code to GitHub and connect the MVG‑Page repository to Netlify through the “New site from Git” workflow.
-
-Set the build command to npm run build and the publish directory to build/ in Netlify settings.
-
-Netlify will automatically build and deploy the site on each push to the main branch.
-
-Project Structure
+```
 MVG-Page/
-├── public/          # Static files and index.html :contentReference[oaicite:28]{index=28}
-├── src/             # Source code :contentReference[oaicite:29]{index=29}
-│   ├── components/  # Reusable React components :contentReference[oaicite:30]{index=30}
-│   ├── assets/      # Images, icons, videos :contentReference[oaicite:31]{index=31}
-│   ├── App.js       # Main App component :contentReference[oaicite:32]{index=32}
-│   ├── index.js     # Entry point :contentReference[oaicite:33]{index=33}
-│   └── styles/      # CSS/SCSS files :contentReference[oaicite:34]{index=34}
-├── .gitignore       # Git ignore file :contentReference[oaicite:35]{index=35}
-├── package.json     # Project metadata and scripts :contentReference[oaicite:36]{index=36}
-└── README.md        # This file :contentReference[oaicite:37]{index=37}
+├── public/          # Static files and index.html
+├── src/             # Source code
+│   ├── components/  # Reusable React components
+│   ├── assets/      # Images, icons, videos
+│   ├── App.js       # Main App component
+│   ├── index.js     # Entry point
+│   └── styles/      # CSS/SCSS files
+├── .gitignore       # Files to ignore in Git
+├── package.json     # Project metadata and scripts
+└── README.md        # This file
+```
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## Contributing
 
-Contact
-Maintained by MVG Games. For questions or feedback, reach out via email at your-email@example.com or open an issue on GitHub.
+Contributions are welcome! Please:
+
+1. Open an issue to discuss significant changes before coding.
+2. Fork the repository and create a new branch for your feature or fix.
+3. Ensure all tests and lint checks pass.
+4. Submit a pull request with a clear description of your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Maintained by MVG Games. For questions or feedback, reach out via:
+
+- Email: `your-email@example.com`
+- GitHub Issues: https://github.com/MaiineV/MVG-Page/issues

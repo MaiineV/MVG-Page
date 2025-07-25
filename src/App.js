@@ -54,50 +54,6 @@ const Portfolio = () => (
       id="sawi"
       gameName="Sawi, The Void Buster" 
       imageRoute={"SawiBanner.png"}/>
-    <GameItem 
-      id="darkEconomy"
-      gameName="Dark Economy" 
-      imageRoute={"DarkEconomyBanner.png"}/>
-    <GameItem 
-      id="factoryQuota"
-      gameName="Factory Quota" 
-      imageRoute={"FactoryQuota.png"}/>
-      <GameItem 
-      id="timeTravelerCivilization"
-      gameName="Time Travel Civilization" 
-      imageRoute={"TimeTravelerCivilization.png"}/>
-      {/* <GameItem 
-      gameName="Sawi, The Void Buster" 
-      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
-      imageRoute={"SawiBanner.png"}/>
-      <GameItem 
-      gameName="Sawi, The Void Buster" 
-      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
-      imageRoute={"SawiBanner.png"}/>
-      <GameItem 
-      gameName="Sawi, The Void Buster" 
-      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
-      imageRoute={"SawiBanner.png"}/>
-      <GameItem 
-      gameName="Sawi, The Void Buster" 
-      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
-      imageRoute={"SawiBanner.png"}/>
-        <GameItem 
-      gameName="Sawi, The Void Buster" 
-      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
-      imageRoute={"SawiBanner.png"}/>
-        <GameItem 
-      gameName="Sawi, The Void Buster" 
-      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
-      imageRoute={"SawiBanner.png"}/>
-        <GameItem 
-      gameName="Sawi, The Void Buster" 
-      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
-      imageRoute={"SawiBanner.png"}/>
-      <GameItem 
-      gameName="Sawi, The Void Buster" 
-      pptLink="https://docs.google.com/presentation/d/1i41noAkloAquLU7qBuRX9uC8RNmDiLRpW37RkgdQFuM/edit?usp=sharing"
-      imageRoute={"SawiBanner.png"}/> */}
     </div>
   </section>
 );

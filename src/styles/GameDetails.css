@@ -1,0 +1,137 @@
+.game-details-page {
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.game-hero {
+  background: linear-gradient(135deg, var(--background-color) 0%, #f0c19c 100%);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.game-hero h1 {
+  font-family: "Lemonada", cursive;
+  color: var(--secondary-color);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.game-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.game-content {
+  background: white;
+  margin-top: -2rem;
+  border-radius: 40px 40px 0 0;
+  position: relative;
+  z-index: 2;
+}
+
+.content-inner {
+  padding: 4rem 0;
+}
+
+.game-image-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.game-image {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.game-description {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.game-features h3 {
+  font-family: "Lemonada", cursive;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.features-list {
+  list-style: none;
+}
+
+.features-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+
+.features-list li::before {
+  content: "✓";
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.actions {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.actions .btn {
+  margin: 0 1rem;
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .game-info {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .game-meta {
+    gap: 1rem;
+  }
+
+  .actions .btn {
+    display: block;
+    margin: 1rem auto;
+    width: fit-content;
+  }
+}

@@ -1,32 +1,49 @@
-import React from 'react';
-import './Portfolio.css';
+import { Link } from 'react-router-dom';
+import '../styles/Portfolio.css';
 
-const Portfolio = () => {
-  const portfolioItems = [
-    { id: 1, videoId: 'video1', name: 'Game 1', downloadLink: '#' },
-    { id: 2, videoId: 'video2', name: 'Game 2', downloadLink: '#' },
-    { id: 3, videoId: 'video3', name: 'Game 3', downloadLink: '#' },
-    { id: 4, videoId: 'video4', name: 'Game 4', downloadLink: '#' },
+const PortfolioPage = () => {
+  const games = [
+    {
+      id: 'sawi',
+      name: 'Sawi, The Void Buster',
+      description: '2D Platformer while being a Frog Alien having a Work Crisis!',
+      image: 'SawiBanner.png',
+      category: 'Platformer',
+      status: 'Demo Available'
+    }
   ];
 
   return (
-    <section id="portfolio" className="section portfolio">
-      <div className="portfolio-grid">
-        {portfolioItems.map(item => (
-          <div key={item.id} className="portfolio-item">
-            <iframe
-              src={`https://www.youtube.com/embed/${item.videoId}`}
-              frameBorder="0"
-              allowFullScreen
-              title={item.name}
-            ></iframe>
-            <h3>{item.name}</h3>
-            <a href={item.downloadLink} className="btn">Download</a>
+    <>
+      <div className="portfolio-page">
+        <div className="container">
+          <div className="portfolio-header fade-in">
+            <h1 className="section-title">Our Portfolio</h1>
+            <p className="portfolio-subtitle">
+              Discover our collection of innovative games, each crafted with passion and attention to detail.
+            </p>
           </div>
-        ))}
+
+          <div className="games-grid">
+            {games.map((game, index) => (
+              <Link 
+                key={game.id} 
+                to={`/game/${game.id}`} 
+                className={`game-card ${index % 2 === 0 ? 'slide-in-left' : 'slide-in-right'}`}
+              >
+                <div className="game-status">{game.status}</div>
+                <div className="game-image"><img src={game.image} alt='Sawi'></img></div>
+                <div className="game-content">
+                  <h3 className="game-title">{game.name}</h3>
+                  <span className="game-category">{game.category}</span>
+                  <p className="game-description">{game.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
-    </section>
+    </>
   );
 };
-
-export default Portfolio;
+export default PortfolioPage;

@@ -12,15 +12,31 @@ const GameDetailsPage = () => {
       image: "/api/placeholder/600/400",
       trailer: "https://www.youtube.com/embed/E3xlxeCcDfs?si=yPrH9Ui1xIjqpe_F",
       downloadLink:
-        "https://drive.google.com/drive/folders/1qLpubZjmdf7CZxrNSlPjl6QM-GOvC9zl?dmr=1&ec=wgc-drive-globalnav-goto",
-      category: "2D Platformer",
-      releaseDate: "2024",
+        "https://neozetti.itch.io/sawi-the-voidbuster",
+      categories: ["2D Platformer", "Adventure", "Indie", "Puzzle"],
+      releaseDate: "2026",
       features: [
         "Unique frog alien protagonist",
         "Multiple worlds to explore",
-        "Creative gadget-based gameplay",
-        "Multiple completion paths",
+        "Play with ClavY, your robot companion",
+        "Speedrun and completionist gameplay!",
         "Engaging storyline",
+      ],
+    },
+    oneStepBehind: {
+      name: "One Step Behind",
+      description:
+        "2D PixelArt Incremental Game, with BulletHell and Metroidvania mechanics, you have to upgrade your self to beat all the bosses with your clone fighting side by side!",
+      image: "/api/placeholder/600/400",
+      trailer: "https://www.youtube.com/embed/E3xlxeCcDfs?si=yPrH9Ui1xIjqpe_F",
+      downloadLink:
+        "https://andres-pittaluga.itch.io/one-step-behind",
+      categories: ["2D PixelArt", "Incremental", "BulletHell", "Metroidvania"],
+      releaseDate: "2026",
+      features: [
+        "Incremental gameplay mixed with metroidvania!",
+        "Fight side by side with your own past lifes!",
+        "Adquire upgrades from an gigant Upgrade Tree",
       ],
     },
   };
@@ -63,7 +79,11 @@ const GameDetailsPage = () => {
         <div className="container">
           <h1>{game.name}</h1>
           <div className="game-meta">
-            <span className="meta-item">{game.category}</span>
+            {game.categories.map((category, index) => (
+              <span key={index} className="meta-item">
+                {category}
+              </span>
+            ))}
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import '../styles/Contact.css'
+import emailjs from '@emailjs/browser';
+import '../styles/Contact.css';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,14 @@ const ContactPage = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  // Replace these with your actual EmailJS credentials
+  const SERVICE_ID = "service_uoqwllq";
+  const TEMPLATE_ID = "template_jdorox7";
+  const PUBLIC_KEY = "7VGg1CkH7NgLyFD8H";
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -16,10 +25,58 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // EmailJS parameters - these should match your template variables
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: "mainevgames@gmail.com", // Your receiving email
+      };
+
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
+
+      if (response.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error("Email send error:", error);
+      setSubmitStatus('error');
+      
+      // Hide error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const validateForm = () => {
+    return (
+      formData.name.trim() !== "" &&
+      formData.email.trim() !== "" &&
+      formData.email.includes("@") &&
+      formData.subject.trim() !== "" &&
+      formData.message.trim() !== ""
+    );
   };
 
   return (
@@ -52,9 +109,9 @@ const ContactPage = () => {
               Send us a message
             </h3>
 
-            <div>
+            <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Your Name</label>
+                <label htmlFor="name">Your Name *</label>
                 <input
                   type="text"
                   id="name"
@@ -62,11 +119,12 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
+                  placeholder="John Doe"
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email Address</label>
+                <label htmlFor="email">Email Address *</label>
                 <input
                   type="email"
                   id="email"
@@ -74,11 +132,12 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
+                  placeholder="john@example.com"
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="subject">Subject</label>
+                <label htmlFor="subject">Subject *</label>
                 <input
                   type="text"
                   id="subject"
@@ -86,29 +145,63 @@ const ContactPage = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
+                  placeholder="Project Collaboration"
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">Message *</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   required
+                  placeholder="Tell us about your project..."
+                  rows="5"
                 ></textarea>
               </div>
 
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div style={{
+                  padding: '1rem',
+                  marginBottom: '1rem',
+                  backgroundColor: '#4CAF50',
+                  color: 'white',
+                  borderRadius: '8px',
+                  textAlign: 'center'
+                }}>
+                  ✓ Message sent successfully! We'll get back to you soon.
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div style={{
+                  padding: '1rem',
+                  marginBottom: '1rem',
+                  backgroundColor: '#f44336',
+                  color: 'white',
+                  borderRadius: '8px',
+                  textAlign: 'center'
+                }}>
+                  ✗ Failed to send message. Please try again or email us directly.
+                </div>
+              )}
+
               <button
-                type="button"
+                type="submit"
                 className="btn btn-primary"
-                style={{ width: "100%" }}
-                onClick={handleSubmit}
+                style={{ 
+                  width: "100%",
+                  opacity: isSubmitting || !validateForm() ? 0.7 : 1,
+                  cursor: isSubmitting || !validateForm() ? 'not-allowed' : 'pointer'
+                }}
+                disabled={isSubmitting || !validateForm()}
               >
-                Send Message →
+                {isSubmitting ? 'Sending...' : 'Send Message →'}
               </button>
-            </div>
+            </form>
           </div>
 
           <div className="contact-info slide-in-right">

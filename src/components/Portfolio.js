@@ -15,7 +15,7 @@ const PortfolioPage = () => {
       id: 'oneStepBehind',
       name: 'One Step Behind',
       description: 'Incremental Bullethell with Metroidvania mechanics!',
-      image: 'SawiBanner.png',
+      image: 'OneStepImage.png',
       categories: ['Incremental', 'Bullethell', 'Metroidvania', 'PixelArt'],
       status: 'Demo Available'
     },

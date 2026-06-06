@@ -1,22 +1,26 @@
+import { Link } from "react-router-dom";
+import { useLang } from "../i18n/LanguageContext";
+import { IconRocket, IconBolt, IconChat, IconShield, IconArrow } from "./Icons";
 import "../styles/About.css";
 
+const valueIcons = [
+  <IconRocket width={26} height={26} />,
+  <IconBolt width={26} height={26} />,
+  <IconChat width={26} height={26} />,
+  <IconShield width={26} height={26} />,
+];
+
 const AboutPage = () => {
-  const teamMembers = [
-    { name: "Game Designer", role: "Creative Vision", icon: "🎨" },
-    { name: "Developer", role: "Technical Excellence", icon: "💻" },
-    { name: "Artist", role: "Visual Storytelling", icon: "🖌️" },
-  ];
+  const { t } = useLang();
+  const a = t.about;
 
   return (
     <div className="about-page">
       <section className="about-hero fade-in">
         <div className="container">
           <div className="about-hero-content">
-            <h1>About MVG</h1>
-            <p>
-              Passionate game developers creating extraordinary experiences
-              since 2024
-            </p>
+            <h1>{a.heroTitle}</h1>
+            <p>{a.heroSubtitle}</p>
           </div>
         </div>
       </section>
@@ -26,76 +30,40 @@ const AboutPage = () => {
           <div className="content-section">
             <div className="story-section">
               <div className="story-text slide-in-left">
-                <h2>Our Story</h2>
-                <p>
-                  MVG is an Argentine company dedicated to video game
-                  development, founded in 2024 with a clear mission: to design
-                  and develop innovative games that push the boundaries of
-                  imagination.
-                </p>
-                <p>
-                  We specialize in creating both our own original titles and
-                  collaborating with other creators to bring their visions to
-                  life. Every project we undertake is infused with passion,
-                  creativity, and technical excellence.
-                </p>
-                <p>
-                  Our team combines years of experience in game development with
-                  fresh perspectives on what makes games truly memorable and
-                  engaging.
-                </p>
+                <h2>{a.storyTitle}</h2>
+                {a.story.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
-              <div className="story-image slide-in-right"><img className="company-image" src="Principal1color.png" alt="MVG" /></div>
+              <div className="story-image slide-in-right">
+                <img
+                  className="company-image"
+                  src="/brand/logo-principal-1color.svg"
+                  alt="MVG Games"
+                />
+              </div>
             </div>
 
             <div className="values-section">
-              <h2 className="section-title">Our Values</h2>
+              <h2 className="section-title">{a.valuesTitle}</h2>
               <div className="values-grid">
-                <div className="value-card fade-in">
-                  <div className="value-icon">🎨</div>
-                  <h3>Creativity</h3>
-                  <p>
-                    We believe in the power of imagination to create worlds that
-                    captivate and inspire players.
-                  </p>
-                </div>
-                <div className="value-card fade-in">
-                  <div className="value-icon">🌟</div>
-                  <h3>Quality</h3>
-                  <p>
-                    Every detail matters. We strive for excellence in every
-                    aspect of game development.
-                  </p>
-                </div>
-                <div className="value-card fade-in">
-                  <div className="value-icon">🤝</div>
-                  <h3>Collaboration</h3>
-                  <p>
-                    Great games are made by great teams. We foster a culture of
-                    collaboration and mutual respect.
-                  </p>
-                </div>
-                <div className="value-card fade-in">
-                  <div className="value-icon">🚀</div>
-                  <h3>Innovation</h3>
-                  <p>
-                    We're always looking for new ways to push the boundaries of
-                    what's possible in gaming.
-                  </p>
-                </div>
+                {a.values.map((v, i) => (
+                  <div className="value-card fade-in" key={i}>
+                    <div className="value-icon">{valueIcons[i]}</div>
+                    <h3>{v.title}</h3>
+                    <p>{v.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="team-section">
-              <h2 className="section-title">Our Team</h2>
-              <div className="team-grid">
-                {teamMembers.map((member, index) => (
-                  <div key={index} className="team-card fade-in">
-                    <div className="team-icon">{member.icon}</div>
-                    <h3>{member.name}</h3>
-                    <p>{member.role}</p>
-                  </div>
-                ))}
+            <div className="founder-note">
+              <h2 className="section-title">{a.founderTitle}</h2>
+              <p>{a.founderText}</p>
+              <div style={{ textAlign: "center", marginTop: "2rem" }}>
+                <Link to="/contact" className="btn btn-primary">
+                  {a.founderBtn} <IconArrow width={18} height={18} />
+                </Link>
               </div>
             </div>
           </div>

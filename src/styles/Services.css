@@ -1,0 +1,86 @@
+/* Services page. Shared primitives live in App.css. */
+
+.services-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--background-color) 0%, #f0c19c 100%);
+  padding: 6rem 0 4.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+.services-hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  background-size: 300px auto;
+  opacity: 0.18;
+  pointer-events: none;
+}
+.services-hero .container { position: relative; z-index: 1; }
+
+.services-hero-title {
+  font-family: "Lemonada", cursive;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  color: var(--secondary-color);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.services-hero-lead {
+  max-width: 62ch;
+  margin: 0 auto 2rem;
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.verticals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+.vertical {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.vertical:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.vertical-head {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.vertical-head h2 {
+  font-family: "Lemonada", cursive;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+.vertical-tagline {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  margin-top: 0.2rem;
+}
+
+.vertical .service-stack {
+  margin-top: 1.5rem;
+}
+
+.fullstack-band {
+  max-width: 760px;
+}
+
+@media (max-width: 768px) {
+  .services-hero { padding: 4.5rem 0 3.5rem; }
+}

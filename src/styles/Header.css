@@ -8,8 +8,18 @@
 }
 
 .header.scrolled {
-  background: rgba(184, 59, 94, 0.95);
+  background: rgba(202, 97, 102, 0.95);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+.logo-img:hover {
+  transform: scale(1.04);
 }
 
 .header-content {
@@ -35,7 +45,45 @@
 .nav-desktop {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1.5rem;
+  align-items: center; /* fixes vertical misalignment of buttons vs links */
+}
+
+.nav-desktop li {
+  display: flex;
+  align-items: center;
+}
+
+.header-cta {
+  padding: 9px 18px;
+  line-height: 1;
+}
+
+/* Language toggle */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 7px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.lang-toggle:hover { background: rgba(255, 255, 255, 0.24); }
+.lang-toggle .on { color: #fff; }
+.lang-toggle .sep { opacity: 0.5; }
+
+.nav-mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
 }
 
 .nav-desktop a {

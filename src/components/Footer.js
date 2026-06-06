@@ -1,79 +1,79 @@
 import { Link } from "react-router-dom";
+import { useLang } from "../i18n/LanguageContext";
+import { IconMail, IconBriefcase, IconLinkedin } from "./Icons";
 import "../styles/Footer.css";
 
 const Footer = () => {
+  const { t } = useLang();
+  const f = t.footer;
+  const n = t.nav;
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>MVG</h3>
-            <p>
-              Creating extraordinary gaming experiences that push the boundaries
-              of imagination and innovation.
-            </p>
+            <img
+              src="/brand/logo-principal-neg.svg"
+              alt="MVG Games"
+              style={{ height: "44px", width: "auto", marginBottom: "1rem" }}
+            />
+            <p>{f.tagline}</p>
             <div className="social-icons">
               <a
                 href="mailto:mainevgames@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
+                aria-label="Email MVG"
               >
-                ✉️
+                <IconMail width={20} height={20} />
               </a>
               <a
                 href="https://www.fiverr.com/s/XLdA9WZ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
+                aria-label="MVG on Fiverr"
               >
-                💼
+                <IconBriefcase width={20} height={20} />
               </a>
               <a
                 href="http://linkedin.com/company/maine-v-games"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
+                aria-label="MVG on LinkedIn"
               >
-                🔗
+                <IconLinkedin width={20} height={20} />
               </a>
             </div>
           </div>
 
           <div className="footer-section">
-            <h3>Quick Links</h3>
+            <h3>{f.quickLinks}</h3>
             <ul className="footer-links">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/portfolio">Portfolio</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
+              <li><Link to="/">{n.home}</Link></li>
+              <li><Link to="/services">{n.services}</Link></li>
+              <li><Link to="/portfolio">{n.portfolio}</Link></li>
+              <li><Link to="/about">{n.about}</Link></li>
+              <li><Link to="/contact">{n.contact}</Link></li>
             </ul>
           </div>
 
           <div className="footer-section">
-            <h3>Services</h3>
+            <h3>{f.servicesH}</h3>
             <ul className="footer-links">
-              <li>Game Development</li>
-              <li>Creative Design</li>
-              <li>Consultation</li>
-              <li>Collaboration</li>
+              <li><Link to="/services">Web &amp; Frontend</Link></li>
+              <li><Link to="/services">Backend &amp; APIs</Link></li>
+              <li><Link to="/services">Game Development</Link></li>
+              <li><Link to="/contact">{f.requestQuote}</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>
-            &copy; 2024 MVG. All rights reserved. Made with ❤️ in Buenos Aires,
-            Argentina.
-          </p>
+          <p>{f.rights}</p>
         </div>
       </div>
     </footer>

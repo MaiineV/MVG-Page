@@ -2,6 +2,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import Header from './components/Header';
 import HomePage from './components/Home';
+import ServicesPage from './components/Services';
 import PortfolioPage from './components/Portfolio';
 import GameDetailsPage from './components/GameDetails';
 import AboutPage from './components/About';
@@ -19,15 +20,16 @@ const App = () => {
       <div className="App">
         <ScrollToTop />
         <Header />
-        
+
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/game/:id" element={<GameDetailsPage />} />
         </Routes>
-        
+
         <Footer />
       </div>
     </BrowserRouter>
